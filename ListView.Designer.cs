@@ -71,8 +71,10 @@ namespace LinkedListLab
 			this.tlp.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
 			this.tlp.Size = new System.Drawing.Size(73, 103);
 			this.tlp.TabIndex = 4;
+			this.tlp.MouseLeave += new System.EventHandler(this.TlpMouseLeave);
 			this.tlp.Paint += new System.Windows.Forms.PaintEventHandler(this.TlpPaint);
 			this.tlp.Enter += new System.EventHandler(this.TlpEnter);
+			this.tlp.MouseHover += new System.EventHandler(this.TlpMouseHover);
 			// 
 			// itemsTlp
 			// 
@@ -89,6 +91,8 @@ namespace LinkedListLab
 			this.itemsTlp.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
 			this.itemsTlp.Size = new System.Drawing.Size(2, 3);
 			this.itemsTlp.TabIndex = 10;
+			this.itemsTlp.MouseLeave += new System.EventHandler(this.ItemsTlpMouseLeave);
+			this.itemsTlp.MouseHover += new System.EventHandler(this.ItemsTlpMouseHover);
 			// 
 			// button1
 			// 
@@ -124,8 +128,8 @@ namespace LinkedListLab
 			this.controlsTlp.AutoSize = true;
 			this.controlsTlp.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.controlsTlp.ColumnCount = 2;
-			this.controlsTlp.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.89874F));
-			this.controlsTlp.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.10126F));
+			this.controlsTlp.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.05479F));
+			this.controlsTlp.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.94521F));
 			this.controlsTlp.Controls.Add(this.button1, 1, 0);
 			this.controlsTlp.Controls.Add(this.addBtn, 0, 0);
 			this.controlsTlp.Dock = System.Windows.Forms.DockStyle.Bottom;

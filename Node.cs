@@ -28,6 +28,7 @@ namespace LinkedListLab
 			get { return link;}
 		}
 		
+		#region constructors
 		
 		public Node()
 		{
@@ -44,6 +45,11 @@ namespace LinkedListLab
 			Link = l;
 		}
 		
+		#endregion
+		
+		
+		#region operators ++ ==
+		
 		// FIXME: работает?
 		
 		/// <summary>
@@ -55,11 +61,16 @@ namespace LinkedListLab
 		public static Node operator++ (Node n){
 			return n.Link;
 		}
-		
+		/*
 		public static Node operator== (Node n1, Node n2){
 			return (n1.Info == n2.Info);
 		}
 		
+		public static Node operator!= (Node n1, Node n2){
+			return !(n1.Info == n2.Info);
+		}
+		*/
+		#endregion
 		
 		
 		public object Clone()
@@ -85,16 +96,16 @@ namespace LinkedListLab
 
 		}
 		/*
-			Node f = new Node(this.Info);
-			Node p;
-			
-			
-			while (this.Link!=null){
-				q = new Node(this.Info);
-			}
-			while ()
-			while ()
-		 */
+		public override int GetHashCode(){
+			return this.Info;
+		}
+		
+		public override bool Equals(Object o){
+			Node n = o as Node;
+			return (this.Info==n.Info);
+		}
+		*/
+
 	}
 }
 

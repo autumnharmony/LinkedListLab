@@ -17,8 +17,6 @@ namespace LinkedListLab
 	/// </summary>
 	public class ListManager
 	{
-		
-		
 		public ListManager()
 		{
 		}
@@ -36,27 +34,38 @@ namespace LinkedListLab
 
 			if (F1!=null && F2!=null && F3!=null){
 				
-				Node p;
+				
+				Node p = F1;
 				Node pp = null;
+				Node q = null;
+				Node prep = F1;
+				
+				bool first = true;
+				
 				if (F1.Info == F2.Info){
+					//работает
+					#region если вхождение в самом начале
 					
 					p = F1;
 					pp = F2;
-
-					do {
+					
+					
+					while (p.Info == pp.Info && pp.Link!=null && p.Link!=null){
+						//if p.Info !=pp.Info)
+						if (first) prep = p; else {prep = prep.Link; first = false;}
 						p=p.Link;
 						pp=pp.Link;
 					}
 					
-					while (p.Info == pp.Info && pp.Link!=null && p.Link!=null);
-					
-					if (pp.Link == null) {
+					// bp
+					if (pp.Info == p.Info) {
+
 						// нашли вхождение
 							
 						MessageBox.Show("нашли вхождение");
 						
 						
-						Node q = (Node)F3.Clone();
+						q = (Node)F3.Clone();
 						F1 = q;
 						while (q.Link!=null){
 							q=q.Link;
@@ -69,87 +78,77 @@ namespace LinkedListLab
 						
 					}
 					
-					
-					
-					
+					#endregion
 				}
 				
 				
-				
-				
-				
+				//Node prep;
+//				p = prep.Link;
 
+				if (q == null){
+					//prep = p;
+					//p = p.Link;
+				}
+				else {
+					prep = q;
+					p = q.Link;
+				}
+//				Node prep = p;
+				//p = p.Link;
 				
-				Node prep = F1;
-				p = F1.Link;
 				
 				
-				do {
+				while (p!=null && p.Link!=null){
+					
 					if (p.Info == F2.Info){
 						
 						// запомнили начало
-						Node s = p;
+						//Node s = p;
 						
 						pp = F2;
 						
-						do {
-							
+						
+						
+						while (p.Info == pp.Info && pp.Link!=null && p.Link!=null)
+						{
 							p=p.Link;
 							pp=pp.Link;
 						}
 						
-						while (p.Info == pp.Info && pp.Link!=null);
-						
-						
-						if (pp.Link == null) {
+						if (pp.Info == p.Info) {
 							// нашли вхождение
 							MessageBox.Show("нашли вхождение");
 							
 							
 							//prep.Link = (Node)F3.Clone();
 							
-							Node q = (Node)F3.Clone();
+							q = (Node)F3.Clone();
 							prep.Link = q;
 							while (q.Link!=null){
 								q=q.Link;
 							}
 							q.Link = p.Link;
-							//prep.Link = q;
+							
+							prep = q;
+							p = q.Link;
 							
 						}
 						
-						p = p.Link;
-						pp = pp.Link;
+						//prep = p
+						//p = p.Link;
+						//prep = prep.Link;
 					}
-					while (p==null && pp==null);
+					//while (p==null && pp==null);
 					
 					
 					
-					
-					p = p.Link;
-					prep = prep.Link;
-				} while (p!=null);
+					prep = p;
+					if (p!=null && p.Link != null) p = p.Link;
+					//if (pp.Link!=null)pp = pp.Link;
+					//prep = prep.Link;
+				} 
 				
-				/*
-					if (p.Info == F2.Info){
-					
-					// запомнили начало
-					Node s = p;
-					
-					Node pp = F2;
-					
-					do {
-						p = p.Link;
-						pp = pp.Link;
-					}
-					while (p.Info == pp.Info && pp!=null);
-					
-					
-					if (pp ==null) {
-						// нашли вхождение
-						
-					}
-				 */
+			
 			}
 			return F1;
 		}

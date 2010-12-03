@@ -105,7 +105,7 @@ namespace LinkedListLab
 		
 		void GbEnter(object sender, EventArgs e)
 		{
-			this.tm.Enabled = true;
+			
 			controlsTlp.Show();
 		}
 		
@@ -127,6 +127,26 @@ namespace LinkedListLab
 		void GbMouseHover(object sender, EventArgs e)
 		{
 			controlsTlp.Show();
+		}
+		
+		void ItemsTlpMouseHover(object sender, EventArgs e)
+		{
+			controlsTlp.Show();
+		}
+		
+		void ItemsTlpMouseLeave(object sender, EventArgs e)
+		{
+			
+		}
+		
+		void TlpMouseHover(object sender, EventArgs e)
+		{
+			controlsTlp.Show();
+		}
+		
+		void TlpMouseLeave(object sender, EventArgs e)
+		{
+			
 		}
 	}
 }
