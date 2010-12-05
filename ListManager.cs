@@ -41,7 +41,7 @@ namespace LinkedListLab
 				Node prep = F1;
 				bool matched = true;
 				bool first = true;
-				
+				/*
 				if (F1.Info == F2.Info){
 					#region если вхождение в самом начале
 
@@ -84,6 +84,9 @@ namespace LinkedListLab
 					
 					#endregion
 				}
+				 */
+				prep = F1;
+				p = F1.Link;
 				
 				while (p!=null){
 					//bp
@@ -96,7 +99,7 @@ namespace LinkedListLab
 						
 						matched = true;
 						
-						while (pp!=null && p.Link!=null){
+						while (pp!=null && p!=null){
 							matched = true;
 							if (pp.Info!=p.Info) {
 								matched = false;
