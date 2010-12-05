@@ -199,6 +199,8 @@ namespace LinkedListLab
 			this.label7.Size = new System.Drawing.Size(75, 41);
 			this.label7.TabIndex = 12;
 			this.label7.Text = "label7";
+			this.label7.Visible = false;
+			this.label7.Click += new System.EventHandler(this.Label7Click);
 			// 
 			// textBox1
 			// 

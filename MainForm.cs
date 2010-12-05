@@ -93,5 +93,10 @@ namespace LinkedListLab
 			CreateListDialog cld = new CreateListDialog();
 			cld.Show();
 		}
+		
+		void Label7Click(object sender, EventArgs e)
+		{
+			MessageBox.Show("Omg!");
+		}
 	}
 }
