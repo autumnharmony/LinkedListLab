@@ -34,12 +34,13 @@ namespace LinkedListLab
 		
 		void MainFormLoad(object sender, EventArgs e)
 		{
+			rl.Editable = false;
 
 		}
 		
 		void Button1Click(object sender, EventArgs e)
 		{
-			
+			this.ouput.Clear();
 			try {
 				SingleLinkedList sl1; 
 				SingleLinkedList sl2; 
@@ -74,8 +75,13 @@ namespace LinkedListLab
 			sl1.First = ListManager.Replace(sl1.First,sl2.First,sl3.First);
 			
 			
-			ouput.Text += "\n";
+			ouput.Text += "\r\n";
 			ouput.Text += sl1.ToString();
+			
+			
+			rl.SetList(sl1);
+			
+			
 			ResumeLayout();
 			}
 			catch (Exception ex) {
@@ -97,6 +103,16 @@ namespace LinkedListLab
 		void Label7Click(object sender, EventArgs e)
 		{
 			MessageBox.Show("Omg!");
+		}
+		
+		void ToolStripMenuItem2Click(object sender, EventArgs e)
+		{
+			tabControl1.SelectedIndex = 0;
+		}
+		
+		void ToolStripMenuItem3Click(object sender, EventArgs e)
+		{
+			tabControl1.SelectedIndex = 1;
 		}
 	}
 }

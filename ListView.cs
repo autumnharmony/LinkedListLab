@@ -20,6 +20,8 @@ namespace LinkedListLab
 	{
 		SingleLinkedList list;
 		
+		public bool Editable = true;
+		
 		public ListView()
 		{
 			//
@@ -78,6 +80,17 @@ namespace LinkedListLab
 		}
 		
 		public void SetList(SingleLinkedList list){
+			SuspendLayout();
+			this.list = list;
+			Node p = list.First;
+			while(p!=null){
+				TextBox tb = new TextBox();
+				tb.Text = p.Info.ToString();
+				tb.Width = 30;
+				this.itemsTlp.Controls.Add(tb);
+				p = p.Link;
+			}
+			ResumeLayout();
 			
 			
 		}
@@ -105,7 +118,7 @@ namespace LinkedListLab
 		
 		void GbEnter(object sender, EventArgs e)
 		{
-			
+			if (Editable)
 			controlsTlp.Show();
 		}
 		
@@ -126,11 +139,13 @@ namespace LinkedListLab
 		
 		void GbMouseHover(object sender, EventArgs e)
 		{
+			if (Editable)
 			controlsTlp.Show();
 		}
 		
 		void ItemsTlpMouseHover(object sender, EventArgs e)
 		{
+			if (Editable)
 			controlsTlp.Show();
 		}
 		
@@ -141,6 +156,7 @@ namespace LinkedListLab
 		
 		void TlpMouseHover(object sender, EventArgs e)
 		{
+			if (Editable)
 			controlsTlp.Show();
 		}
 		

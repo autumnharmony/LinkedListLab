@@ -41,27 +41,27 @@ namespace LinkedListLab
 				Node prep = F1;
 				bool matched = true;
 
-				//FIXME: случай, когда вхождение в самом начале
+				//FIXME: работает, вроде
 				
-				#region если вхождение в самом начале
-				/*
 				if (F1.Info == F2.Info){
-					
-
+				#region если вхождение в самом начале
 					p = F1;
 					pp = F2;
 					
 					//Node t = p;
 					
-					//bool matched = true;
+					
 					
 					while (pp!=null && p!=null){
-						//if p.Info !=pp.Info)
+						matched = true;
+						if (p.Info != pp.Info) {
+							matched = false; 
+							break;
+						}
 						
-						//if (first) prep = p; else {prep = prep.Link; first = false;}
-						if (p.Info != pp.Info) {matched = false; break;}
 						p=p.Link;
 						pp=pp.Link;
+						
 					}
 					
 					// bp
@@ -69,15 +69,12 @@ namespace LinkedListLab
 
 						// нашли вхождение
 						
-						MessageBox.Show("нашли вхождение");
-						
-						
 						q = (Node)F3.Clone();
 						F1 = q;
 						while (q.Link!=null){
 							q=q.Link;
 						}
-						q.Link = p.Link;
+						q.Link = p;
 					}
 					
 					else {
@@ -85,13 +82,16 @@ namespace LinkedListLab
 						prep = F1;
 					}
 					
-					
+				#endregion	
 				}
-				 */
-				#endregion
 				
-				prep = F1;
-				p = F1.Link;
+				else {
+					prep = F1;
+					p = F1.Link;
+				}
+				
+			
+				#region середина и конец
 				
 				while (p!=null){
 
@@ -144,6 +144,8 @@ namespace LinkedListLab
 					}
 					
 				}
+				
+				#endregion
 				
 			}
 			
