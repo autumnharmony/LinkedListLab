@@ -51,6 +51,10 @@ namespace LinkedListLab
 			this.label4 = new System.Windows.Forms.Label();
 			this.label5 = new System.Windows.Forms.Label();
 			this.label6 = new System.Windows.Forms.Label();
+			this.label7 = new System.Windows.Forms.Label();
+			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.textBox2 = new System.Windows.Forms.TextBox();
+			this.textBox3 = new System.Windows.Forms.TextBox();
 			this.menuStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -188,11 +192,44 @@ namespace LinkedListLab
 			this.label6.TabIndex = 11;
 			this.label6.Text = "на";
 			// 
+			// label7
+			// 
+			this.label7.Location = new System.Drawing.Point(623, 372);
+			this.label7.Name = "label7";
+			this.label7.Size = new System.Drawing.Size(75, 41);
+			this.label7.TabIndex = 12;
+			this.label7.Text = "label7";
+			// 
+			// textBox1
+			// 
+			this.textBox1.Location = new System.Drawing.Point(25, 234);
+			this.textBox1.Name = "textBox1";
+			this.textBox1.Size = new System.Drawing.Size(100, 20);
+			this.textBox1.TabIndex = 13;
+			// 
+			// textBox2
+			// 
+			this.textBox2.Location = new System.Drawing.Point(25, 260);
+			this.textBox2.Name = "textBox2";
+			this.textBox2.Size = new System.Drawing.Size(100, 20);
+			this.textBox2.TabIndex = 14;
+			// 
+			// textBox3
+			// 
+			this.textBox3.Location = new System.Drawing.Point(25, 286);
+			this.textBox3.Name = "textBox3";
+			this.textBox3.Size = new System.Drawing.Size(100, 20);
+			this.textBox3.TabIndex = 15;
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(699, 413);
+			this.Controls.Add(this.textBox3);
+			this.Controls.Add(this.textBox2);
+			this.Controls.Add(this.textBox1);
+			this.Controls.Add(this.label7);
 			this.Controls.Add(this.label6);
 			this.Controls.Add(this.label5);
 			this.Controls.Add(this.label4);
@@ -214,6 +251,10 @@ namespace LinkedListLab
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.TextBox textBox3;
+		private System.Windows.Forms.TextBox textBox2;
+		private System.Windows.Forms.TextBox textBox1;
+		private System.Windows.Forms.Label label7;
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Label label4;

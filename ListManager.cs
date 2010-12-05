@@ -34,34 +34,38 @@ namespace LinkedListLab
 
 			if (F1!=null && F2!=null && F3!=null){
 				
-				
 				Node p = F1;
 				Node pp = null;
 				Node q = null;
-				Node prep = F1;
 				
+				Node prep = F1;
+				bool matched = true;
 				bool first = true;
 				
 				if (F1.Info == F2.Info){
-					//работает
 					#region если вхождение в самом начале
-					
+
 					p = F1;
 					pp = F2;
 					
+					//Node t = p;
 					
-					while (p.Info == pp.Info && pp.Link!=null && p.Link!=null){
+					//bool matched = true;
+					
+					while (pp!=null && p!=null){
 						//if p.Info !=pp.Info)
-						if (first) prep = p; else {prep = prep.Link; first = false;}
+						
+						//if (first) prep = p; else {prep = prep.Link; first = false;}
+						if (p.Info != pp.Info) {matched = false; break;}
 						p=p.Link;
 						pp=pp.Link;
 					}
 					
 					// bp
-					if (pp.Info == p.Info) {
+					if (matched) {
 
 						// нашли вхождение
-							
+						
 						MessageBox.Show("нашли вхождение");
 						
 						
@@ -71,88 +75,80 @@ namespace LinkedListLab
 							q=q.Link;
 						}
 						q.Link = p.Link;
-						
-						//F1 = q;
-						
-						
-						
+					}
+					
+					else {
+						p = F1.Link;
+						prep = F1;
 					}
 					
 					#endregion
 				}
 				
-				
-				//Node prep;
-//				p = prep.Link;
-
-				if (q == null){
-					//prep = p;
-					//p = p.Link;
-				}
-				else {
-					prep = q;
-					p = q.Link;
-				}
-//				Node prep = p;
-				//p = p.Link;
-				
-				
-				
-				while (p!=null && p.Link!=null){
-					
+				while (p!=null){
+					//bp
 					if (p.Info == F2.Info){
 						
 						// запомнили начало
-						//Node s = p;
+						Node s = p;
 						
 						pp = F2;
 						
+						matched = true;
 						
-						
-						while (p.Info == pp.Info && pp.Link!=null && p.Link!=null)
-						{
-							p=p.Link;
-							pp=pp.Link;
+						while (pp!=null && p.Link!=null){
+							matched = true;
+							if (pp.Info!=p.Info) {
+								matched = false;
+								break;
+							}
+							
+							else {
+								//bp
+								matched = true;
+								pp = pp.Link;
+								p = p.Link;
+							}
 						}
 						
-						if (pp.Info == p.Info) {
-							// нашли вхождение
-							MessageBox.Show("нашли вхождение");
-							
-							
-							//prep.Link = (Node)F3.Clone();
+						if (matched) {
+
+							//MessageBox.Show("нашли вхождение");
 							
 							q = (Node)F3.Clone();
-							prep.Link = q;
+							
 							while (q.Link!=null){
 								q=q.Link;
 							}
-							q.Link = p.Link;
 							
+							q.Link = p;
+							prep.Link = q;
 							prep = q;
-							p = q.Link;
-							
+							//p = p.Link;
 						}
 						
-						//prep = p
-						//p = p.Link;
-						//prep = prep.Link;
+						else {
+							prep = s;
+							p = s.Link;
+						}
 					}
-					//while (p==null && pp==null);
 					
+					else {
+						prep = p;
+						p = p.Link;
+						
+					}
+					//if (p!=null && matched) 
+					//if (matched)	p = p.Link;
+					//if (pp.Link!=null && pp !=null)pp = pp.Link;
 					
-					
-					prep = p;
-					if (p!=null && p.Link != null) p = p.Link;
-					//if (pp.Link!=null)pp = pp.Link;
-					//prep = prep.Link;
-				} 
+				}
 				
-			
 			}
+			
 			return F1;
+			
 		}
-		
 	}
 }
 

@@ -20,6 +20,13 @@ namespace LinkedListLab
 			set { first = value; }
 			get { return first; }
 		}
+		
+		public bool isEmpty {
+			get { 
+				if (First==null) return true;
+				return false; 
+			}
+		}
 		public SingleLinkedList()
 		{
 			
@@ -33,6 +40,33 @@ namespace LinkedListLab
 				p = new Node(data[i],first);
 				first = p;
 			}
+			
+		}
+		
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="data">строка вида 1 2 3 4 5 6</param>
+		public SingleLinkedList(string data){
+			string[] sa = data.Split(' ');
+			
+			int[] a = new int[sa.Length];
+			                 
+			for (int i = 0; i<sa.Length; i++){
+				a[i] = int.Parse(sa[i]);
+			}
+			
+			Node last;
+			if (a.Length == 0) first = null;
+			else {
+				First = new Node(a[0],null);
+				last = First;
+				for (int i=1;i<a.Length;i++){
+					last.Link = new Node(a[i],null);
+					last = last.Link;
+				}
+			}
+		
 			
 		}
 		

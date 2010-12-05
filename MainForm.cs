@@ -41,10 +41,32 @@ namespace LinkedListLab
 		{
 			
 			try {
-				SingleLinkedList sl1= listView1.GetList();
-				SingleLinkedList sl2= listView2.GetList();
-				SingleLinkedList sl3= listView3.GetList();
-			
+				SingleLinkedList sl1; 
+				SingleLinkedList sl2; 
+				SingleLinkedList sl3; 
+				
+				
+				
+				sl1 = listView1.GetList();
+				sl2 = listView2.GetList();
+				sl3 = listView3.GetList();
+				
+				if (sl1.isEmpty && sl2.isEmpty && sl3.isEmpty) {
+					
+					
+					if (textBox1.Text.Length!=0 && textBox2.Text.Length!=0 && textBox3.Text.Length!=0){
+						sl1 = new SingleLinkedList(textBox1.Text.Trim());
+						sl2 = new SingleLinkedList(textBox2.Text.Trim());
+						sl3 = new SingleLinkedList(textBox3.Text.Trim());
+					}
+				}
+				
+				else {
+				
+					sl1 = new SingleLinkedList("1 1 1 1 2 1 1 2 3");
+					sl2 = new SingleLinkedList("1 1 2");
+					sl3 = new SingleLinkedList("0");
+				}
 			
 			SuspendLayout();
 			ouput.Text += sl1.ToString();
