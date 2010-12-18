@@ -25,7 +25,15 @@ namespace LinkedListLab
 		/// 
 		/// 10, 20, 4, 5, 10, 20, 6.
 		/// </summary>
-		public static  Node Replace(Node F1, Node F2, Node F3){
+		public static  Node Replace(SingleLinkedList L1, SingleLinkedList L2, SingleLinkedList L3){
+			
+			Node F1 = L1.First;
+			Node F2 = L2.First;
+			Node F3 = L3.First;
+			
+			SingleLinkedList l1 = L1;
+			SingleLinkedList l2 = L2;
+			SingleLinkedList l3 = L3;
 
 			if (F1!=null && F2!=null && F3!=null){
 				
@@ -56,7 +64,7 @@ namespace LinkedListLab
 						
 						if (p.Info != pp.Info) {
 							matched = false;
-							continue; 
+							break; 
 						}
 						//else{
 						//matched = true;
@@ -79,7 +87,7 @@ namespace LinkedListLab
 						q.Link = p;
 						
 						prep = q;
-						//p = q.Link;
+						p = q.Link;
 						//Debug.WriteLine("prep ="+prep.Info+" p="+p.Info);
 					}
 					
@@ -104,13 +112,13 @@ namespace LinkedListLab
 					Debug.WriteLine(p.Info+"");
 					if (p.Info == F2.Info){
 						Debug.WriteLine("преположительно вхождение");
-						
+						Debug.WriteLine(p+"");
 						// запомнили начало
 						Node s = p;
 						
 						pp = F2;
 						
-						matched = true;
+						matched = false;
 						
 						while (pp!=null && p!=null){
 							
@@ -124,16 +132,22 @@ namespace LinkedListLab
 								}
 								
 								
+								
 								matched = true;
 								//else {
 								//	matched = true;
 								pp = pp.Link;
 								p = p.Link;
+								if (pp == null && matched){
+									matched = true;
+									break;
+								}
 								
 								if (p == null) { 
 									matched = false; 
 									break;
 								}
+								
 								//}
 								
 								//matched = true;

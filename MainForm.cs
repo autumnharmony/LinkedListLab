@@ -76,7 +76,7 @@ namespace LinkedListLab
 			SuspendLayout();
 			ouput.Text += sl1.ToString();
 			
-			sl1.First = ListManager.Replace(sl1.First,sl2.First,sl3.First);
+			sl1.First = ListManager.Replace(sl1,sl2,sl3);
 			
 			
 			ouput.Text += "\r\n";
