@@ -95,6 +95,12 @@ namespace LinkedListLab
 			return First;
 
 		}
+		
+		public override string ToString()
+		{
+			return Info+"";
+		}
+			
 		/*
 		public override int GetHashCode(){
 			return this.Info;

@@ -65,6 +65,7 @@ namespace LinkedListLab
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
+			this.log = new System.Windows.Forms.TextBox();
 			this.menuStrip1.SuspendLayout();
 			this.panel1.SuspendLayout();
 			this.panel2.SuspendLayout();
@@ -98,7 +99,7 @@ namespace LinkedListLab
 									this.видToolStripMenuItem});
 			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip1.Name = "menuStrip1";
-			this.menuStrip1.Size = new System.Drawing.Size(699, 24);
+			this.menuStrip1.Size = new System.Drawing.Size(713, 24);
 			this.menuStrip1.TabIndex = 2;
 			this.menuStrip1.Text = "menuStrip1";
 			// 
@@ -335,7 +336,7 @@ namespace LinkedListLab
 			this.tabPage1.Location = new System.Drawing.Point(4, 5);
 			this.tabPage1.Name = "tabPage1";
 			this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage1.Size = new System.Drawing.Size(658, 377);
+			this.tabPage1.Size = new System.Drawing.Size(496, 377);
 			this.tabPage1.TabIndex = 0;
 			this.tabPage1.Text = "tabPage1";
 			this.tabPage1.UseVisualStyleBackColor = true;
@@ -351,11 +352,21 @@ namespace LinkedListLab
 			this.tabPage2.Text = "tabPage2";
 			this.tabPage2.UseVisualStyleBackColor = true;
 			// 
+			// log
+			// 
+			this.log.Location = new System.Drawing.Point(510, 61);
+			this.log.Multiline = true;
+			this.log.Name = "log";
+			this.log.Size = new System.Drawing.Size(188, 292);
+			this.log.TabIndex = 22;
+			this.log.WordWrap = false;
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(699, 413);
+			this.ClientSize = new System.Drawing.Size(713, 413);
+			this.Controls.Add(this.log);
 			this.Controls.Add(this.label7);
 			this.Controls.Add(this.button1);
 			this.Controls.Add(this.menuStrip1);
@@ -378,6 +389,7 @@ namespace LinkedListLab
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		public System.Windows.Forms.TextBox log;
 		private LinkedListLab.ListView rl;
 		private System.Windows.Forms.TabPage tabPage2;
 		private System.Windows.Forms.TabPage tabPage1;

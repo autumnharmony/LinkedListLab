@@ -18,6 +18,8 @@ namespace LinkedListLab
 	/// </summary>
 	public partial class MainForm : Form
 	{
+		
+		ListManager lm;
 		public MainForm()
 		{
 			//
@@ -35,6 +37,8 @@ namespace LinkedListLab
 		void MainFormLoad(object sender, EventArgs e)
 		{
 			rl.Editable = false;
+			//Log l = new Log(log);
+			//lm = new ListManager(l);
 
 		}
 		
